@@ -1,0 +1,21 @@
+{
+  "name": "plant_matcher",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "evalg": "node src/evalg.js",
+    "fix-plant-data": "node src/fixPlantData.js",
+    "create-neighbor-matrix": "node src/createNeighborMatrix.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "csv-parse": "^5.0.4",
+    "csv-stringify": "^6.0.5",
+    "d3-dsv": "^3.0.1",
+    "fast-csv": "^4.3.6"
+  }
+}
