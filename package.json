@@ -7,7 +7,8 @@
   "scripts": {
     "evalg": "node src/evalg.js",
     "fix-plant-data": "node src/fixPlantData.js",
-    "create-neighbor-matrix": "node src/createNeighborMatrix.js"
+    "create-neighbor-matrix": "node src/createNeighborMatrix.js",
+    "check-selection": "node src/checkPlantSelection.js"
   },
   "author": "",
   "license": "MIT",
@@ -16,6 +17,7 @@
     "csv-parse": "^5.0.4",
     "csv-stringify": "^6.0.5",
     "d3-dsv": "^3.0.1",
-    "fast-csv": "^4.3.6"
+    "fast-csv": "^4.3.6",
+    "string-similarity": "^4.0.4"
   }
 }

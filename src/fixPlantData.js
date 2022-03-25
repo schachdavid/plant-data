@@ -1,32 +1,8 @@
-import { readFileSync, writeFileSync } from "fs";
-import { parse } from "csv-parse/sync";
+import { writeFileSync } from "fs";
 import { stringify } from "csv-stringify/sync";
+import { getPlantDataByKey } from "./utils.js";
 
-// read csv data
-const csvFile = readFileSync("./data/plant_data.csv", "utf8");
-
-function parseNeighbors(neighbors) {
-  return neighbors
-    .split(",")
-    .map((w) => w.trim().toLowerCase())
-    .filter((d) => d !== "");
-}
-
-const data = parse(csvFile, {
-  columns: true,
-  relax_quotes: true,
-  delimiter: ",",
-}).map((d) => ({
-  ...d,
-  species: d.species.toLowerCase(),
-  worksGoodWith: parseNeighbors(d.worksGoodWith),
-  worksBadWith: parseNeighbors(d.worksBadWith),
-}));
-
-let dict = data.reduce(
-  (dict, el) => ({ ...dict, [el.species]: { ...el } }),
-  {}
-);
+let dict = getPlantDataByKey();
 
 // check for neighbor conflicts and missing plants
 
@@ -145,6 +121,7 @@ let dataToSave = Object.keys(dict)
       {}
     )
   )
+  // @ts-ignore
   .sort((a, b) => a.species.localeCompare(b.species));
 
 // save adjusted csv

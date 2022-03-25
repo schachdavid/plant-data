@@ -78,10 +78,6 @@ data.forEach((d, i) => {
 console.log("\n\n\n\n");
 
 // utils
-function capitalizeFirstLetter(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
 function fillWordWithSpaces(word, length) {
   let result = word;
   result = getSpaces(length - word.length) + result;
@@ -95,3 +91,7 @@ function getSpaces(num) {
   }
   return result;
 }
+function capitalizeFirstLetter(species) {
+  throw new Error("Function not implemented.");
+}
+

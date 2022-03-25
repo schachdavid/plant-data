@@ -1,5 +1,6 @@
 import { readFileSync } from "fs";
 import { parse } from "csv-parse/sync";
+import { getPlantData, getScore } from "./utils";
 
 const NUMBER_OF_PLANTS = 4;
 
@@ -7,25 +8,9 @@ const GENERATIONS = 50;
 const GENERATION_SIZE = 200;
 
 // the number of plant selections to keep each generation
-const KEEP_SIZE = GENERATION_SIZE/10;
+const KEEP_SIZE = GENERATION_SIZE / 10;
 
-const csvFile = readFileSync("./data/plant_data.csv", "utf8");
-const data = parse(csvFile, { columns: true, relax_quotes: true, delimiter: "," }).map((d) => ({
-  ...d,
-  worksGoodWith: d.worksGoodWith.split(",").map((w) => w.trim()),
-  worksBadWith: d.worksBadWith.split(",").map((w) => w.trim()),
-}));
-
-function getScore(selection) {
-  return selection.reduce(
-    (prev, cur) =>
-      prev +
-      -1 *
-        selection.filter((d) => cur.worksBadWith.includes(d.species)).length +
-      selection.filter((d) => cur.worksGoodWith.includes(d.species)).length,
-    0
-  );
-}
+const data = getPlantData();
 
 function getRandomSelection(arr, n) {
   var result = new Array(n),

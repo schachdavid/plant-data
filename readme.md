@@ -37,6 +37,16 @@ Run using:
 npm run create-neighbor-matrix
 ```
 
+### check-selection (src/checkPlantSelection.js)
+
+Checks a plant selection configured in src/config.js for compatibility.
+
+Run using:
+
+```bash
+npm run check-selection
+```
+
 ### create-neighbor-matrix (src/neighborMatrix.js)
 
 Creates a matrix visualizing which plants are a great match.
