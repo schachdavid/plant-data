@@ -19,7 +19,7 @@ The plant data csv file holds the following variables:
 
 ## Scripts
 
-The following scripts provide features to to process and visualize the plant data.
+The following scripts provide features to process and visualize the plant data.
 Make sure you have node 16 or higher installed. Setup:
 
 ```bash
@@ -34,7 +34,7 @@ Checks plant_data.csv file for errors e.g. checking if all neighbor relations ar
 Run using:
 
 ```bash
-npm run create-neighbor-matrix
+npm run fix-plant-data
 ```
 
 ### check-selection (src/checkPlantSelection.js)
@@ -61,7 +61,7 @@ npm run create-neighbor-matrix
 
 ### evalg (src/evolutionaryAlgorithm.js)
 
-An evolutionary alogrithm to find best matching plants to grow in raised garden bed.
+An evolutionary alogrithm to find best matching plants to grow in a raised garden bed.
 
 Run using:
 
